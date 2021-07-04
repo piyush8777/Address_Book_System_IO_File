@@ -29,7 +29,9 @@ public class AddressBookMain {
             System.out.println("[9] :read from a .txtfile");
             System.out.println("[10] :view in a .csvfile");
             System.out.println("[11] :read from a .csvfile");
-            System.out.println("[12] :Exit");
+            System.out.println("[12] :view in a JSON");
+            System.out.println("[13] :read from a JSON");
+            System.out.println("[14] :Exit");
             System.out.println("Enter choice: ");
             int option = sc.nextInt();
             switch (option) {
@@ -93,7 +95,8 @@ public class AddressBookMain {
                     addressBook1.writeContactPersonData(AddressBook.IOService.FILE_IO);
                     break;
                 case 9:
-                    AddressBookFileIOService.printData();
+                    AddressBookFileIOService.readData();
+                    addressBookFileIOService.printData();
                     break;
                 case 10:
                     try {
@@ -110,10 +113,24 @@ public class AddressBookMain {
                     }
                     break;
                 case 12:
+                    try {
+                        AddressBookJSONService.writeDataToJSon();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 13:
+                    try {
+                        AddressBookJSONService.readDataFromJson();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 14:
                     flag = false;
                     break;
             }
         }
     }
-
 }

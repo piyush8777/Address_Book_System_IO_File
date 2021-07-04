@@ -8,41 +8,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddressBookFileIOService {
-	
-	 private static final String HOME ="C:\\Users\\PIYUSH\\eclipse-workspace\\AddressBookSystem_IO_Files\\src\\main\\java\\";
+	public void writeData(List<Contact> contactList , String addressBookName) {
+        StringBuffer personBuffer = new StringBuffer();
+        contactList.forEach( person-> {
+            String contactDataString = person.toString().concat("\n");
+            personBuffer.append(contactDataString);
 
-	    public void writeData(List<Contact> contactList , String addressBookName) {
-	        StringBuffer personBuffer = new StringBuffer();
-	        contactList.forEach( person-> {
-	            String contactDataString = person.toString().concat("\n");
-	            personBuffer.append(contactDataString);
+        });
+        try {
+            Files.write(Paths.get( addressBookName + ".txt"),personBuffer.toString().getBytes());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
-	        });
-	        try {
-	            Files.write(Paths.get(HOME+addressBookName + ".txt"),personBuffer.toString().getBytes());
-	        }catch (IOException e){
-	            e.printStackTrace();
-	        }
-	    }
-
-	    public static List<Contact> readData (){
-	        List<Contact> contactPersonList = new ArrayList<>();
-	        try {
-	            Files.lines(new File(HOME+"kolkata.txt").toPath())
-	                    .map(line -> line.trim())
-	                    .forEach(line->System.out.println(line));
-	        }catch (IOException e){
-	            e.printStackTrace();
-	        }
-	        return contactPersonList;
-	    }
-	    public static void printData(){
-	        try {
-	            Files.lines(new File(HOME+"kolkata.txt").toPath())
-	                    .forEach(System.out::println);
-	        }catch (IOException e){
-	            e.printStackTrace();
-	        }
-	    }
-
+    public static List<Contact> readData (){
+        List<Contact> contactPersonList = new ArrayList<>();
+        try {
+            Files.lines(new File("kolkata.txt").toPath())
+                    .map(line -> line.trim())
+                    .forEach(line->System.out.println(line));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return contactPersonList;
+    }
+    public void printData(){
+        try {
+            Files.lines(new File("kolkata.txt").toPath())
+                    .forEach(System.out::println);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,11 +1,11 @@
 /**
- * ************************** 
- * Purpose: to Read/Write the Address Book with Persons Contact as CSV File
+ * ************************************************************************* 
+ * Purpose: to Read/Write the Address Book with Persons Contact as JSON File
  *                       
  * @author Piyush Shaw
  * @version 1.0
  * @since 29-06-2021
- * **************************
+ * **************************************************************************
  */
 
 package com.bridgelabz;
@@ -15,7 +15,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 

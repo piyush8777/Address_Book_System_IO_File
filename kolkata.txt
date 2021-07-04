@@ -1,1 +1,2 @@
 Contacts{firstName='piyush', lastName='shaw', address='kolkata', city='howrah', email='piy@gmail.com', state='wb', zip=711101, phoneNumber=9876543210}
+Contacts{firstName='rosy', lastName='rupali', address='bihar', city='patna', email='rosy@gmail.com', state='bihar', zip=654112, phoneNumber=98786543211}

@@ -16,7 +16,7 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 public class AddressBookCSVService {
 
    private static final String HOME ="C:\\Users\\PIYUSH\\eclipse-workspace\\AddressBookSystem_IO_Files\\src\\main\\java\\";
-    public static void writeDataToCSV() throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
+   public static void writeDataToCSV() throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
         try (Writer writer = Files.newBufferedWriter(Paths.get(HOME+"Contacts.csv"))){
             StatefulBeanToCsvBuilder <Contact> builder = new StatefulBeanToCsvBuilder<> (writer);
             StatefulBeanToCsv<Contact> beanWriter = builder.build();
