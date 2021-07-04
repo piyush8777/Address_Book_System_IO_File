@@ -1,12 +1,2 @@
-[
-    {
-        "FirstName": "Piyush",
-        "LastName": "Shaw",
-        "Address": "Howrah",
-        "City": "Howrah",
-        "State": "WestBengal",
-        "ZipCode": "123456",
-        "PhoneNumber": "1234567890",
-        "Email": "piyush@gmail.com"
-    }
-]
+[{"firstName":"piyush","lastName":"shaw","address":"howrah","city":"howrah","email":"piyush@gmail.com","state":"westbengal","zip":123456,"phoneNumber":9876543210}]
+    
